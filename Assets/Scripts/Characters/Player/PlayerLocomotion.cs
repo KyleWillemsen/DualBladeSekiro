@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class PlayerLocomotion : MonoBehaviour
 {
-    InputManager inputManager;
-   
     //References
-    Vector3 moveDirection;
-    Transform cam;
-    Rigidbody rb;
+    private InputManager inputManager;
+    private Vector3 moveDirection;
+    private Transform cam;
+    private Rigidbody rb;
 
     private bool isSprinting;
     [Header("Speeds")]

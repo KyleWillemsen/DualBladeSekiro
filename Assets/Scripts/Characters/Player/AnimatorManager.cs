@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class AnimatorManager : MonoBehaviour
 {
-    Animator anim;
+    public static AnimatorManager instance;
+    public Animator anim;
     int horizontal;
     int vertical;
 
     private void Awake()
     {
+        if (instance != null)
+        {
+            Destroy(instance);
+            return;
+        }
+        instance = this;
+
         anim = GetComponent<Animator>();
         horizontal = Animator.StringToHash("Horizontal");
         vertical = Animator.StringToHash("Vertical");

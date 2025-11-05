@@ -38,6 +38,10 @@ public class InputManager : MonoBehaviour
 
             playerControls.PlayerMovement.Movement.performed += i => movementInput = i.ReadValue<Vector2>();
             playerControls.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
+
+            playerControls.PlayerMovement.MeleeAttack.performed += i => GetComponent<PlayerMeleeCombat>().Attack();
+            playerControls.PlayerMovement.ParryLeft.performed += i => GetComponent<PlayerMeleeCombat>().ParryLeft();
+            playerControls.PlayerMovement.ParryRight.performed += i => GetComponent<PlayerMeleeCombat>().ParryRight();
         }
 
         playerControls.Enable();
